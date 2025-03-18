@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    width: 100%;
+    padding: 0px;
+    background-color: #f8f9fa;
+}
+
+#container {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.quiz_container {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz_container h5 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 15px;
+    border-collapse: collapse;
+}
+
+.table thead th {
+    text-align: center;
+    background: #424949;
+    color: white;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.table tbody td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.subject_button {
+    margin-top: 20px;
+    text-align: center;
+}

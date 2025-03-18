@@ -1,0 +1,64 @@
+* {
+    margin: 0px;
+}
+
+#main {
+    border: 2px solid black;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 300px;
+    min-width: 600px;
+    max-width: 650px;
+    background-color: whitesmoke;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 40px;
+    margin-bottom: 200px;
+    border: 1px solid black; /* Black border for the container */
+    text-align: center;
+    justify-content: center;
+}
+
+.table_container h5 {
+    border: #424949;
+    text-align: center;
+    margin: 10px 10px;
+}
+
+.chapter_button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.subject_button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Table Styles */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table thead tr th {
+    text-align: center;
+    height: 100%;
+    background: #424949;
+    color: white;
+    font-size: medium;
+    padding: 0.8rem;
+    vertical-align: top;
+    border: 1px solid black; /* Black field separator for headers */
+}
+
+.table tbody tr td {
+    font-size: medium;
+    text-align: center;
+    padding: auto;
+    border: 1px solid black; /* Black field separator for body cells */
+}

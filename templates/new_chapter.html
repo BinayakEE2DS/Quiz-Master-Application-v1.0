@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Chapter</title>
+    <link rel="stylesheet" href="/static/new_chapter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="main">
+        <div id="canvas">
+            <div id="form-body">
+                <div style="text-align: center;">
+                    <h4 style="color: blue;">New Chapter</h4><br>  
+                    <!-- Form starts here -->
+                    <form action="/create_new_chapter/{{ subject.id }}" method="POST">
+                        <!-- Subject Name -->
+                        <div class="mb-3">
+                            <label for="subjectName" class="form-label">Subject Name</label>
+                            <input type="text" class="form-control" id="subjectName" value="{{ subject.name }}" readonly>
+                        </div>
+                        <!-- Chapter Name Field -->
+                        <div class="mb-3">
+                            <label for="chapterName" class="form-label">Chapter Name</label>
+                            <input type="text" class="form-control" id="chapterName" name="chapter_name" placeholder="eg. Straight lines" required>
+                        </div>
+                        <!-- Description for Chapter -->
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="description" name="description" style="height: 200px" required></textarea>
+                            <label for="description">Description</label><br>
+                        </div>
+                        <!-- Buttons -->
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <a href="/admin" type="button" class="btn btn-danger">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>            
+</body>
+</html>

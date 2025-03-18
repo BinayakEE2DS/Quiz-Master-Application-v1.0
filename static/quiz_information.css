@@ -1,0 +1,45 @@
+*{
+    margin:0px;
+}
+#main {
+    border: 2px solid black;
+    background-color: black;
+}
+#canvas{
+    border: 2px solid black;
+    width :80%;
+    margin :auto;
+    height :650px; 
+    background-color: orange;
+}
+#form-body {
+    border: 2px solid black;
+    width: 500px;
+    height: 560px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.form-horizontal .form-label {
+    text-align: center;
+    flex: 0 0 150px;
+    max-width: 150px;
+    margin-bottom: 0;
+}
+
+.form-horizontal .form-control {
+    flex: 1;
+}
+
+.form-horizontal .mb-3 {
+    display: flex;
+    align-items: center;
+}
+
+.buttons{
+    margin-bottom :10px;
+    margin-top:20px;
+}

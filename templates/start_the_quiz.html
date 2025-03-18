@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Quiz</title>
+    <link rel="stylesheet" href="/static/start_the_quiz.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="main-container">
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} flash-message">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- Status Bar -->
+        <div id="status-bar">
+            <div class="status-item">
+                <label for="questionSelect">Select Question No.:</label>
+                <select id="questionSelect" onchange="location.href='/start_quiz/{{ quiz.id }}/' + this.value;">
+                    {% for question in questions %}
+                        <option value="{{ question.id }}" {% if question.id == current_question.id %}selected{% endif %}>Question {{ loop.index }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="status-item">
+                Current Question No.: <span id="currentQuestion">{{ current_question_index }}</span>
+            </div>
+            <div class="status-item">
+                Total Questions: <span id="totalQuestions">{{ questions|length }}</span>
+            </div>
+        </div>
+
+        <!-- Question Container -->
+        <div id="question-container">
+            <h4 style="color: blue; text-align: left; margin-top: 15px;">Question No: <span id="questionNumber">{{ current_question_index }}</span></h4>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px" readonly>{{ current_question.question_statement }}</textarea>
+                <label for="floatingTextarea2">Question Statement</label><br>
+            </div>
+            <h4 style="color: black; text-align: center;">Choose the correct option</h4><br>
+            <form id="quizForm" action="/save_answer" method="POST">
+                <input type="hidden" name="quiz_id" value="{{ quiz.id }}">
+                <input type="hidden" name="question_id" value="{{ current_question.id }}">
+                <input type="hidden" name="user_id" value="{{ user.id }}">
+                <div class="form-horizontal">
+                    <!-- Options for answer -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="option1" value="1">
+                        <label class="form-check-label" for="option1">Option 1: {{ current_question.option_1 }}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="option2" value="2">
+                        <label class="form-check-label" for="option2">Option 2: {{ current_question.option_2 }}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="option3" value="3">
+                        <label class="form-check-label" for="option3">Option 3: {{ current_question.option_3 }}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="option4" value="4">
+                        <label class="form-check-label" for="option4">Option 4: {{ current_question.option_4 }}</label>
+                    </div>
+                </div>
+                <!-- Buttons -->
+                <div class="Buttons" style="text-align: center;">
+                    <br>
+                    <button type="submit" class="btn btn-success" name="action" value="save_and_next">Save & Next</button>
+                    <button type="submit" class="btn btn-danger" name="action" value="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

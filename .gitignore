@@ -1,0 +1,27 @@
+# Python Specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env/
+instance/
+
+# Node.js (If you have any node modules)
+node_modules/
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Virtual Environment (If you were using one)
+venv/
+.venv/
+
+# IDE Specific (If you were using one)
+.idea/
+*.swp
+*.swo
+*.vscode/
