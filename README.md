@@ -69,3 +69,6 @@ o	Edit/Delete Question: /edit_question/<int:question_id>, /delete_question/<int:
 8. To run the application follow the following steps:
     (a) Activate the virtual environment ->.env/bin/activate
     (b) Run the app.py file -> python app.py
+
+
+9. Push to github -> git push -u origin main
